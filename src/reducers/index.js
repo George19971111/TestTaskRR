@@ -53,6 +53,10 @@ const reducer = (state = initialState, action) => {
     }
     case "LOG_OUT": {
       localStorage.removeItem("jwt");
+      return {
+        ...state,
+        validata: false
+      };
     }
     case "IS_SESSION": {
       if (localStorage.getItem("jwt") !== null) {
